@@ -1,0 +1,6 @@
+"UnlitGeneric"
+{
+	"$baseTexture" "backpack/poseidon/ssg08/w_ssg"
+	"$translucent" 1
+	"$vertexcolor" 1
+}
