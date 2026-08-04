@@ -258,7 +258,7 @@
                 "move speed penalty"
                 {
                     "attribute_class"   "move speed penalty"
-                    "value"     "4.0"
+                    "value"     "0.2"
                 }
                 "fire rate penalty"
                 {
@@ -442,6 +442,8 @@
             "item_quality"    "unique"                                                                               //Цвет названия оружия
             "item_slot"	      "primary"                                                                              //В каком слоту находится оружие. Некоторые 'item_class' которые находятся в одном слоту не могут находится в другом, так например вы не сможете засунуть милишку в первый слот и наоборот.
         }
+        
     }
+    
     
 }
