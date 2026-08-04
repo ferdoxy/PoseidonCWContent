@@ -70,7 +70,60 @@
             "description_format"    "value_is_additive"
             "effect_type"       "negative"
         }
+        "11014"
+        {
+            "name"      "pluz_explain2"
+            "description_string"    "Вы не можете прыгать (жир мешает)"
+            "description_format"    "value_is_additive"
+            "effect_type"       "negative"
+        }
+        "11015"
+        {
+            "name"  "spid_explain_neg"
+            "description_string"    "-2 к скорости захвата точек и вагонеток"
+            "description_format"    "value_is_additive"
+            "effect_type"       "negative"
+        }
+        "11016"
+        {
+            "name"  "spid_explain_neu"
+            "description_string"    "На ПКМ вы заражаете врагов СПИДом"
+            "description_format"    "value_is_additive"
+            "effect_type"       "neutral"
+        }
+        "11017"
+        {
+            "name"  "spid_explain_neg2"
+            "description_string"    "-40% скорости восстановления СПИДа"
+            "description_format"    "value_is_additive"
+            "effect_type"       "negative"
+        }
 
+        "11018"
+        {
+            "name"                    "civ boost targets enemies"
+            "attribute_class"        "add_civ_boost_enemies"
+            "description_format"    "value_is_additive"
+            "hidden"                "1"
+            "effect_type"            "positive"
+            "stored_as_integer"        "0"
+        }
+        "11071"
+        {
+			"name"			        "umbrella recharge rate decreased"
+			"attribute_class"	    "umbrella_recharge_rate"
+			"description_string"	"Скорость восстановления доп. атаки: -%s1%"
+			"description_format"	"value_is_inverted_percentage"
+			"effect_type"		    "negative"
+		}
+        "11196"
+        {
+			"name"			        "umbrella recharge rate increased fix"
+			"attribute_class"	    "umbrella_recharge_rate"
+			"description_string"	"Скорость восстановления доп. атаки: +%s1%"
+			"description_format"	"value_is_inverted_percentage"
+			"effect_type"		    "positive"
+		}
 
         
     }
@@ -100,40 +153,40 @@
 
                 "damage bonus"                                                                    //Нанесение критов в спину
                 {
-					"attribute_class"	"damage bonus"
+					"attribute_class"	"mult_dmg"
 					"value"             "1.5"
 				}
                 "bullets per shot bonus"                                                                                  //Уменьшает обойму
 				{
-					"attribute_class"	"bullets per shot bonus"
+					"attribute_class"	"mult_bullets_per_shot"
 					"value"				"2.0"
 				}
                 "spread penalty"                                                                                //Перезарядка сразу по 2 патрона за раз
                 {
-                    "attribute_class"    "spread penalty"
+                    "attribute_class"    "mult_spread_scale"
                     "value"              "1.45"
                 }
 
                                                                             //Всё что ниже 'hidden separator' не будет отображаться в статах пушки
                 "clip size penalty"                                                                                 //Ускорение при нанесении урона на 2 секунды
                 {
-					"attribute_class"	"clip size penalty"
+					"attribute_class"	"mult_clipsize"
 					"value"             "0.1667"
 				}
                 "maxammo primary reduced"                                                                                //Ускорение при убийстве на 5 секунд 
                 {
-					"attribute_class"	"maxammo primary reduced"
+					"attribute_class"	"mult_maxammo_primary"
 					"value"             "0.0"
 				}
                 "hidden separator" "1"  
                 "instant reload on kill"                                                                                //Ускорение при убийстве на 5 секунд 
                 {
-					"attribute_class"	"instant reload on kill"
+					"attribute_class"	"instant_reload_on_kill"
 					"value"             "1"
 				}
                 "add ammo on kill"
                 {
-                    "attribute_class"   "add ammo on kill"
+                    "attribute_class"   "add_ammo_on_kill"
                     "value" "1"
                 } 
 
@@ -171,24 +224,24 @@
 
                 "bullets per shot bonus"                                                                                  //Уменьшает обойму
 				{
-					"attribute_class"	"bullets per shot bonus"
+					"attribute_class"	"mult_bullets_per_shot"
 					"value"				"0.85"
 				}
                 "weapon spread bonus"                                                                                //Перезарядка сразу по 2 патрона за раз
                 {
-                    "attribute_class"    "weapon spread bonus"
+                    "attribute_class"    "mult_spread_scale"
                     "value"              "0.2"
                 }
                 "fire rate bonus"
                 {
-                    "attribute_class" "fire rate bonus"
+                    "attribute_class" "mult_postfiredelay"
                     "value"   "0.1"
                 }
                 "skorostrel_explain"    "1"
 
                 "damage penalty"                                                                    //Нанесение критов в спину
                 {
-					"attribute_class"	"damage penalty"
+					"attribute_class"	"mult_dmg"
 					"value"             "0.25"
 				}
 
@@ -200,12 +253,12 @@
                 "hidden separator" "1"  
                 "add ammo on kill"
                 {
-                    "attribute_class"   "add ammo on kill"
+                    "attribute_class"	"add_ammo_on_kill"
                     "value" "75"
                 } 
                 "dmg bonus vs buildings"
                 {
-                    "attribute_class"       "dmg bonus vs buildings"
+                    "attribute_class"	"mult_dmg_vs_buildings"
                     "value"     "0.1"
                 }
 
@@ -245,48 +298,52 @@
 
                 "increase player capture value"
                 {
-                    "attribute_class"   "increase player capture value"
+                    "attribute_class"	"add_player_capturevalue"
                     "value"         "1000.0"
                 }
 
                 "max health additive bonus"
                 {
-                    "attribute_class"   "max health additive bonus"
+                    "attribute_class"	"add_maxhealth"
                     "value"     "250.0"
                 }
 
-                "move speed penalty"
+
+
+                "civ boost cond override"
                 {
-                    "attribute_class"   "move speed penalty"
-                    "value"     "0.2"
+                    "attribute_class"	"add_civ_boost_override"
+                    "value" "6 3.0"
                 }
+
+                "damage bonus"
+                {
+                    "attribute_class"	"mult_dmg"
+                    "value"     "8.0"
+                }
+
                 "fire rate penalty"
                 {
                     "attribute_class"       "fire rate penalty"
                     "value"     "2.0"
                 }
-
-
-                "civ boost cond override"
+                "move speed penalty"
                 {
-                    "attribute_class" "civ boost cond override"
-                    "value" "6 1.0"
+                    "attribute_class"   "move speed penalty"
+                    "value"     "0.2"
                 }
+
+
+
+
+                "pluz_explain2" "1"
+                "pluz_explain" "1"
+                "hidden separator"  "1"
                 "increased jump height"
                 {
                     "attribute_class"   "increased jump height"
                     "value" "0.1"
                 }
-                "damage bonus"
-                {
-                    "attribute_class"   "damage bonus"
-                    "value"     "8.0"
-                }
-
-
-
-                "pluz_explain" "1"
-
 
 
             }
@@ -321,32 +378,32 @@
 
                 "fire rate bonus"
                 {
-                    "attribute_class"   "fire rate bonus"
+                    "attribute_class"	"mult_postfiredelay"
                     "value"         "0.01"
                 }
                 "clip size bonus"
                 {
-                    "attribute_class"   "clip size bonus"
+                    "attribute_class"	"mult_clipsize"
                     "value"     "4.0"
                 }
                 "maxammo primary increased"
                 {
-                    "attribute_class"   "maxammo primary increased"
+                    "attribute_class"	"mult_maxammo_primary"
                     "value"     "8.0"
                 }
                 "Reload time decreased"
                 {
-                    "attribute_class"   "Reload time decreased"
+                    "attribute_class"   "mult_reload_time"
                     "value"     "0.1"
                 }
                 "no self blast dmg"
                 {
                     "attribute_class"    "no_self_blast_dmg"
-                    "value"              "1"
+                    "value"              "2"
                 }  
                 "damage penalty"
                 {
-                    "attribute_class"   "damage penalty"
+                    "attribute_class"   "mult_dmg"
                     "value"     "0.15"
                 }
 
@@ -383,24 +440,24 @@
             "model_world"	            "models/weapons/c_models/c_csgo_awp/c_ssg.mdl"                                   //Моделька, которая будет отображаться от третьего лица. Обычно можно ставить тоже самое что и в 'model_player'
             "attach_to_hands"           "2"                                                                          //Определяет то как персонаж должен держать модельку. Если будет неправильное значение, то пушка будет неправильно отображаться. Если вы взяли модельку из 'tf_items_game', то там же можно найти её правильный 'attach_to_hands'
             "anim_slot"                 "primary"                                                                    //Почти тоже самое что и 'attach_to_hands', только в большинстве влияет на то как персонаж будет держать оружие от третьего лица.
-            "extra_wearable"            ""   //Косметика которая будет одеваться при экипировки пушки. Опять же большинство косметики можно найти в 'tf_items_game'
+            "extra_wearable"            "models/player/items/sniper/straw_hat.mdl"   //Косметика которая будет одеваться при экипировки пушки. Опять же большинство косметики можно найти в 'tf_items_game'
             "attributes"                                                                                             //Аттрибуты, а именно то что отличает вашу пушку от стока. Список всех аттрибутов и что они делают можно найти в TF2Classified_Attributes_Listing.txt
             {   
 
                 "damage bonus"
                 {
-                    "attribute_class"   "damage bonus"
+                    "attribute_class"	"mult_dmg"
                     "value"     "1.35"
                 }
 
                 "fire rate bonus"
                 {
-                    "attribute_class"   "fire rate bonus"
+                    "attribute_class"	"mult_postfiredelay"
                     "value"     "0.75"
                 }
                 "maxammo primary increased"
                 {
-                    "attribute_class"   "maxammo primary increased"
+                    "attribute_class"	"mult_maxammo_primary"
                     "value"     "5.0"
                 }
                 "ssg08_explain" "1"
@@ -411,17 +468,17 @@
                 "hidden separator"  "1"
                 "headshot damage increase"
                 {
-                    "attribute_class"   "headshot damage increase"
+                    "attribute_class"   "headshot_damage_modify"
                     "value"     "0.45"
                 }
                 "sniper charge per sec"
                 {
-                    "attribute_class"   "sniper charge per sec"
+                    "attribute_class"   "mult_sniper_charge_per_sec"
                     "value"     "0.01"
                 }
                 "sniper full charge damage bonus"
                 {
-                    "attribute_class" "sniper full charge damage bonus"
+                    "attribute_class" "sniper_full_charge_damage_bonus"
                     "value" "0.0"
                 }
                                                                             //Всё что ниже 'hidden separator' не будет отображаться в статах пушки
@@ -430,6 +487,13 @@
 
 
 
+            }
+            "visuals"
+            {
+                "player_bodygroups"
+                {
+                    "hat"   "1"
+                }
             }
             "static_attrs"                                                                                           //Это сдвигает пушку в сторону при включении 'Уменьшеных моделей оружия' в настройках
 			{
@@ -442,8 +506,105 @@
             "item_quality"    "unique"                                                                               //Цвет названия оружия
             "item_slot"	      "primary"                                                                              //В каком слоту находится оружие. Некоторые 'item_class' которые находятся в одном слоту не могут находится в другом, так например вы не сможете засунуть милишку в первый слот и наоборот.
         }
-        
+        "10007"
+        {
+            "name"                      "spid"                                                                        //Название пушки в файлах, можно писать всё что угодно - главное чтобы оно не повторялось с чем либо
+            "show_in_armory"            "1"                                                                          //Будет ли показываться ваша пушка в лодауте
+            "item_class"	            "tf2c_weapon_umbrella"                                                       //То, на чём строится ваша пушка - в данном случае на обрезе разведчика. Все items_class'ы вы можете найти в 'tf_items_game'
+            "item_logname"              "Спидозный"
+            "item_iconname"             "umbrella"                                                                 //Иконка которая будет рисоваться в киллфиде при убийстве, большинство иконок можно найти в 'tf_items_game'
+            "item_name"                 "Спидозный"                                                    //Название вашей пушки в самой игре
+            "item_type_name"            "Венерическое заболевание"                                                                      //То что будет писаться под названием пушки
+            "item_description"          "Венерический букет в подарок"                                     //Описание пушки, которое будет отображаться в самом низу. 
+            "image_inventory"		    "backpack/weapons/w_models/w_umbrella"                                     //Иконка, которая рисуется в лодауте персонажа. Все стандартные иконки можно найти в 'tf_items_game'
+            "model_player"		        "models/weapons/v_models/v_umbrella_civilian.mdl"                                   //Моделька оружия, которая будет отображаться от первого лица. Все стандартные модельки можно найти в 'tf_items_game'
+            "model_world"	            "models/weapons/w_models/w_umbrella.mdl"                                   //Моделька, которая будет отображаться от третьего лица. Обычно можно ставить тоже самое что и в 'model_player'
+            "attach_to_hands"           "2"                                                                          //Определяет то как персонаж должен держать модельку. Если будет неправильное значение, то пушка будет неправильно отображаться. Если вы взяли модельку из 'tf_items_game', то там же можно найти её правильный 'attach_to_hands'
+            "anim_slot"                 "melee"                                                                    //Почти тоже самое что и 'attach_to_hands', только в большинстве влияет на то как персонаж будет держать оружие от третьего лица.
+            "extra_wearable"            ""  
+            "attributes"                                                                                             //Аттрибуты, а именно то что отличает вашу пушку от стока. Список всех аттрибутов и что они делают можно найти в TF2Classified_Attributes_Listing.txt
+            {   
+
+                "move speed bonus"
+                {
+                    "attribute_class"   "mult_player_movespeed"
+                    "value"     "4.5"
+                }
+                "fire rate bonus"
+                {
+                    "attribute_class"       "mult_postfiredelay"
+                    "value"     "0.5"
+                }
+
+                "civ boost targets enemies"
+                {
+                    "attribute_class"   "add_civ_boost_enemies"
+                    "value"     "1"
+                }
+
+
+                "increased jump height"
+                {
+                    "attribute_class"   "mod_jump_height"
+                    "value" "2.5"
+                }
+                "cancel falling damage"
+                {
+                    "attribute_class"   "cancel_falling_damage"
+                    "value"     "1"
+                }
+                "max health additive penalty"
+                {
+                    "attribute_class"   "add_maxhealth"
+                    "value"     "-75.0"
+                }
+                "damage penalty"
+                {
+                    "attribute_class"   "mult_dmg"
+                    "value"     "0.65"
+                }
+                "civ boost cond override"
+                {
+                    "attribute_class"	"add_civ_boost_override"
+                    "value" "27 8.0"
+                }
+
+
+
+                "spid_explain_neg" "1"
+                "spid_explain_neg2" "1"
+
+                "cannot pick up intelligence"
+                {
+                    "attribute_class"   "cannot_pick_up_intelligence"
+                    "value" "1"
+                }
+
+                "spid_explain_neu" "1"
+
+
+                "hidden separator"  "1"
+                "increase player capture value"
+                {
+                    "attribute_class"	"add_player_capturevalue"
+                    "value"         "-2.0"
+                }
+                "umbrella recharge rate increased fix"
+				{
+					"attribute_class"	"umbrella_recharge_rate"
+					"value"				"0.6"
+				}
+            }
+            "static_attrs"                                                                                           //Это сдвигает пушку в сторону при включении 'Уменьшеных моделей оружия' в настройках
+			{
+				"min_viewmodel_offset"					"10 0 -10"
+			}
+            "used_by_classes"                                                                                        //Какой класс может использовать данное оружие
+            {
+                "Civilian"		"1"
+            }
+            "item_quality"    "unique"                                                                               //Цвет названия оружия
+            "item_slot"	      "melee"                                                                              //В каком слоту находится оружие. Некоторые 'item_class' которые находятся в одном слоту не могут находится в другом, так например вы не сможете засунуть милишку в первый слот и наоборот.
+        }
     }
-    
-    
 }
