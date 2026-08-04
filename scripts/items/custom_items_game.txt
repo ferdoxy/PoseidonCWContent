@@ -98,8 +98,14 @@
             "description_format"    "value_is_additive"
             "effect_type"       "negative"
         }
-
         "11018"
+        {
+            "name"  "missinggun_explain"
+            "description_string"    "Убер-заряд 1 раз спасает от смерти"
+            "description_format"    "value_is_additive"
+            "effect_type"       "neutral"
+        }
+        "11019"
         {
             "name"                    "civ boost targets enemies"
             "attribute_class"        "add_civ_boost_enemies"
@@ -124,6 +130,9 @@
 			"description_format"	"value_is_inverted_percentage"
 			"effect_type"		    "positive"
 		}
+
+
+
 
         
     }
@@ -330,7 +339,7 @@
                 "move speed penalty"
                 {
                     "attribute_class"   "move speed penalty"
-                    "value"     "0.2"
+                    "value"     "0.35"
                 }
 
 
@@ -438,7 +447,7 @@
             "image_inventory"		    "backpack/poseidon/ssg08/w_ssg"                                     //Иконка, которая рисуется в лодауте персонажа. Все стандартные иконки можно найти в 'tf_items_game'
             "model_player"		        "models/weapons/c_models/c_csgo_awp/c_ssg.mdl"                                   //Моделька оружия, которая будет отображаться от первого лица. Все стандартные модельки можно найти в 'tf_items_game'
             "model_world"	            "models/weapons/c_models/c_csgo_awp/c_ssg.mdl"                                   //Моделька, которая будет отображаться от третьего лица. Обычно можно ставить тоже самое что и в 'model_player'
-            "attach_to_hands"           "2"                                                                          //Определяет то как персонаж должен держать модельку. Если будет неправильное значение, то пушка будет неправильно отображаться. Если вы взяли модельку из 'tf_items_game', то там же можно найти её правильный 'attach_to_hands'
+            "attach_to_hands"           "1"                                                                          //Определяет то как персонаж должен держать модельку. Если будет неправильное значение, то пушка будет неправильно отображаться. Если вы взяли модельку из 'tf_items_game', то там же можно найти её правильный 'attach_to_hands'
             "anim_slot"                 "primary"                                                                    //Почти тоже самое что и 'attach_to_hands', только в большинстве влияет на то как персонаж будет держать оружие от третьего лица.
             "extra_wearable"            "models/player/items/sniper/straw_hat.mdl"   //Косметика которая будет одеваться при экипировки пушки. Опять же большинство косметики можно найти в 'tf_items_game'
             "attributes"                                                                                             //Аттрибуты, а именно то что отличает вашу пушку от стока. Список всех аттрибутов и что они делают можно найти в TF2Classified_Attributes_Listing.txt
@@ -561,7 +570,7 @@
                 "damage penalty"
                 {
                     "attribute_class"   "mult_dmg"
-                    "value"     "0.65"
+                    "value"     "0.85"
                 }
                 "civ boost cond override"
                 {
@@ -605,6 +614,69 @@
             }
             "item_quality"    "unique"                                                                               //Цвет названия оружия
             "item_slot"	      "melee"                                                                              //В каком слоту находится оружие. Некоторые 'item_class' которые находятся в одном слоту не могут находится в другом, так например вы не сможете засунуть милишку в первый слот и наоборот.
+        }
+        "10008"
+        {
+            "name"                      "missinggun"                                                                        //Название пушки в файлах, можно писать всё что угодно - главное чтобы оно не повторялось с чем либо
+            "show_in_armory"            "1"                                                                          //Будет ли показываться ваша пушка в лодауте
+            "item_class"	            "tf_weapon_medigun"                                                       //То, на чём строится ваша пушка - в данном случае на обрезе разведчика. Все items_class'ы вы можете найти в 'tf_items_game'
+            "item_logname"              "Missing.gun"
+            "item_iconname"             ""                                                                 //Иконка которая будет рисоваться в киллфиде при убийстве, большинство иконок можно найти в 'tf_items_game'
+            "item_name"                 "Missing.gun"                                                    //Название вашей пушки в самой игре
+            "item_type_name"            "Потерянное чудо"                                                                      //То что будет писаться под названием пушки
+            "item_description"          "Mein Freund! Freund?.."                                     //Описание пушки, которое будет отображаться в самом низу. 
+            "image_inventory"		    "backpack/poseidon/missinggun/missingtex"                                     //Иконка, которая рисуется в лодауте персонажа. Все стандартные иконки можно найти в 'tf_items_game'
+            "model_player"		        "models/weapons/c_models/c_perperehil/c_perperehil.mdl"                                   //Моделька оружия, которая будет отображаться от первого лица. Все стандартные модельки можно найти в 'tf_items_game'
+            "model_world"	            "models/weapons/c_models/c_perperehil/c_perperehil.mdl"                                   //Моделька, которая будет отображаться от третьего лица. Обычно можно ставить тоже самое что и в 'model_player'
+            "attach_to_hands"           "1"                                                                          //Определяет то как персонаж должен держать модельку. Если будет неправильное значение, то пушка будет неправильно отображаться. Если вы взяли модельку из 'tf_items_game', то там же можно найти её правильный 'attach_to_hands'
+            "anim_slot"                 "secondary"                                                                    //Почти тоже самое что и 'attach_to_hands', только в большинстве влияет на то как персонаж будет держать оружие от третьего лица.
+            "extra_wearable"            ""  
+            "attributes"                                                                                             //Аттрибуты, а именно то что отличает вашу пушку от стока. Список всех аттрибутов и что они делают можно найти в TF2Classified_Attributes_Listing.txt
+            {   
+                "overheal bonus"
+                {
+                    "attribute_class"   "mult_medigun_overheal_amount"
+                    "value"     "6.0"
+                }
+                "overheal decay penalty"
+                {
+                    "attribute_class"   "mult_medigun_overheal_decay"
+                    "value"     "0.04"
+                }
+                "heal rate penalty"
+                {
+                    "attribute_class"   "mult_medigun_healrate"
+                    "value"     "0.85"
+                }
+                "max health additive penalty"
+                {
+                    "attribute_class"   "add_maxhealth"
+                    "value"     "-50"
+                }
+                "mod ubercharge cond"
+                {
+                    "attribute_class"   "mod_ubercharge_cond"
+                    "value"     "70"
+                }
+                "ubercharge rate penalty"
+                {
+                    "attribute_class"   "mult_medigun_uberchargerate"
+                    "value"     "0.75"
+                }
+
+                "missinggun_explain"    "1"
+                
+            }
+            "static_attrs"                                                                                           //Это сдвигает пушку в сторону при включении 'Уменьшеных моделей оружия' в настройках
+			{
+				"min_viewmodel_offset"					"10 0 -10"
+			}
+            "used_by_classes"                                                                                        //Какой класс может использовать данное оружие
+            {
+                "Medic"		"1"
+            }
+            "item_quality"    "unique"                                                                               //Цвет названия оружия
+            "item_slot"	      "secondary"                                                                              //В каком слоту находится оружие. Некоторые 'item_class' которые находятся в одном слоту не могут находится в другом, так например вы не сможете засунуть милишку в первый слот и наоборот.
         }
     }
 }
