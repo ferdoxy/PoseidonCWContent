@@ -1,0 +1,6 @@
+"UnlitGeneric"
+{
+	"$baseTexture" "backpack/poseidon/spinorub/c_spinorub_large"
+	"$translucent" 1
+	"$vertexcolor" 1
+}

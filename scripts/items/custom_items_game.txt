@@ -114,6 +114,27 @@
             "effect_type"            "positive"
             "stored_as_integer"        "0"
         }
+        "11020"
+        {
+            "name"  "spinorub_explain"
+            "description_string"    "Применяет древнюю магию, которая усиляет удар при попадании"
+            "description_format"    "value_is_additive"
+            "effect_type"       "positive"
+        }
+        "11021"
+        {
+            "name"  "spinorub_explain2"
+            "description_string"    "Магия балансирует силы и даёт убер жертве, которая выжила на 2 сек."
+            "description_format"    "value_is_additive"
+            "effect_type"       "negative"
+        }
+        "11022"
+        {
+            "name"  "spinorub_explain3"
+            "description_string"    "После попадания ничто кроме ножа не наносит урона 4 сек."
+            "description_format"    "value_is_additive"
+            "effect_type"       "negative"
+        }
         "11071"
         {
 			"name"			        "umbrella recharge rate decreased"
@@ -130,6 +151,8 @@
 			"description_format"	"value_is_inverted_percentage"
 			"effect_type"		    "positive"
 		}
+
+        
 
 
 
@@ -674,6 +697,168 @@
             "used_by_classes"                                                                                        //Какой класс может использовать данное оружие
             {
                 "Medic"		"1"
+            }
+            "item_quality"    "unique"                                                                               //Цвет названия оружия
+            "item_slot"	      "secondary"                                                                              //В каком слоту находится оружие. Некоторые 'item_class' которые находятся в одном слоту не могут находится в другом, так например вы не сможете засунуть милишку в первый слот и наоборот.
+        }
+        "10009"
+        {
+            "name"                      "spinorub"                                                                        //Название пушки в файлах, можно писать всё что угодно - главное чтобы оно не повторялось с чем либо
+            "show_in_armory"            "1"                                                                          //Будет ли показываться ваша пушка в лодауте
+            "item_class"	            "tf_weapon_knife"                                                       //То, на чём строится ваша пушка - в данном случае на обрезе разведчика. Все items_class'ы вы можете найти в 'tf_items_game'
+            "item_logname"              "Спиноруб"                                                           //Иконка которая будет рисоваться в киллфиде при убийстве, большинство иконок можно найти в 'tf_items_game'
+            "item_name"                 "Спиноруб"                                                    //Название вашей пушки в самой игре
+            "item_type_name"            "Бензопи..нож"                                                                      //То что будет писаться под названием пушки
+            "item_description"          "БЕГИТЕ, Я КОНЧЕНЫЙ (модель by CoBalt)"                                     //Описание пушки, которое будет отображаться в самом низу. 
+            "image_inventory"		    "backpack/poseidon/spinorub/c_spinorub"                                     //Иконка, которая рисуется в лодауте персонажа. Все стандартные иконки можно найти в 'tf_items_game'
+            "model_player"		        "models/workshop/weapons/c_models/c_chainsawknife/c_chainsawknife.mdl"                                   //Моделька оружия, которая будет отображаться от первого лица. Все стандартные модельки можно найти в 'tf_items_game'
+            "model_world"	            "models/workshop/weapons/c_models/c_chainsawknife/c_chainsawknife.mdl"                                   //Моделька, которая будет отображаться от третьего лица. Обычно можно ставить тоже самое что и в 'model_player'
+            "attach_to_hands"           "1"                                                                          //Определяет то как персонаж должен держать модельку. Если будет неправильное значение, то пушка будет неправильно отображаться. Если вы взяли модельку из 'tf_items_game', то там же можно найти её правильный 'attach_to_hands'
+            "anim_slot"                 "melee"                                                                    //Почти тоже самое что и 'attach_to_hands', только в большинстве влияет на то как персонаж будет держать оружие от третьего лица.
+            "extra_wearable"            "models/player/items/spy/spy_winterjacket.mdl"   //Косметика которая будет одеваться при экипировки пушки. Опять же большинство косметики можно найти в 'tf_items_game'
+            "attributes"                                                                                             //Аттрибуты, а именно то что отличает вашу пушку от стока. Список всех аттрибутов и что они делают можно найти в TF2Classified_Attributes_Listing.txt
+            {   
+                "fire rate bonus"
+                {
+                    "attribute_class"   "mult_postfiredelay"
+                    "value"     "0.2"
+                }
+                "add condition on hit self"
+                {
+                    "attribute_class"       "add_onhit_addcond_self"
+                    "value"     "41 4.0"
+                }
+                "add condition on hit self"
+                {
+                    "attribute_class"       "add_onhit_addcond_self"
+                    "value"     "19 8.0"
+                }
+                "add condition on hit"
+                {
+                    "attribute_class"       "add_onhit_addcond"
+                    "value"     "5 2.0"
+                }
+                "spinorub_explain"  "1"
+                "spinorub_explain2"     "1"
+                "spinorub_explain3"     "1"
+            }
+            "static_attrs"                                                                                           //Это сдвигает пушку в сторону при включении 'Уменьшеных моделей оружия' в настройках
+			{
+				"min_viewmodel_offset"					"10 0 -10"
+			}
+            "used_by_classes"                                                                                        //Какой класс может использовать данное оружие
+            {
+                "Spy"		"1"
+            }
+            "item_quality"    "unique"                                                                               //Цвет названия оружия
+            "item_slot"	      "melee"                                                                              //В каком слоту находится оружие. Некоторые 'item_class' которые находятся в одном слоту не могут находится в другом, так например вы не сможете засунуть милишку в первый слот и наоборот.
+        }
+        "10010"
+        {
+            "name"                      "ebaniyvrot"                                                                        //Название пушки в файлах, можно писать всё что угодно - главное чтобы оно не повторялось с чем либо
+            "show_in_armory"            "1"                                                                          //Будет ли показываться ваша пушка в лодауте
+            "item_class"	            "tf_weapon_rocketlauncher_airstrike"                                                       //То, на чём строится ваша пушка - в данном случае на обрезе разведчика. Все items_class'ы вы можете найти в 'tf_items_game'
+            "item_logname"              "Судный день"                                                           //Иконка которая будет рисоваться в киллфиде при убийстве, большинство иконок можно найти в 'tf_items_game'
+            "item_name"                 "Судный день"                                                    //Название вашей пушки в самой игре
+            "item_type_name"            "Оружие Сатаны"                                                                      //То что будет писаться под названием пушки
+            "item_description"          "Нам всем п..здец."                                     //Описание пушки, которое будет отображаться в самом низу. 
+            "image_inventory"		    "backpack/workshop/weapons/c_models/c_atom_launcher/c_atom_launcher"                                     //Иконка, которая рисуется в лодауте персонажа. Все стандартные иконки можно найти в 'tf_items_game'
+            "model_player"		        "models/workshop/weapons/c_models/c_atom_launcher/c_atom_launcher.mdl"                                   //Моделька оружия, которая будет отображаться от первого лица. Все стандартные модельки можно найти в 'tf_items_game'
+            "model_world"	            "models/workshop/weapons/c_models/c_atom_launcher/c_atom_launcher.mdl"                                   //Моделька, которая будет отображаться от третьего лица. Обычно можно ставить тоже самое что и в 'model_player'
+            "attach_to_hands"           "1"                                                                          //Определяет то как персонаж должен держать модельку. Если будет неправильное значение, то пушка будет неправильно отображаться. Если вы взяли модельку из 'tf_items_game', то там же можно найти её правильный 'attach_to_hands'
+            "anim_slot"                 "primary"                                                                    //Почти тоже самое что и 'attach_to_hands', только в большинстве влияет на то как персонаж будет держать оружие от третьего лица.
+            "extra_wearable"            "models/player/items/soldier/homefront_blindfold.mdl"   //Косметика которая будет одеваться при экипировки пушки. Опять же большинство косметики можно найти в 'tf_items_game'
+            "attributes"                                                                                             //Аттрибуты, а именно то что отличает вашу пушку от стока. Список всех аттрибутов и что они делают можно найти в TF2Classified_Attributes_Listing.txt
+            {   
+                "damage bonus"
+                {
+                    "attribute_class"   "mult_dmg"
+                    "value"     "5.0"
+                }
+                "no self blast dmg"
+                {
+                    "attribute_class"    "no_self_blast_dmg"
+                    "value"              "2"
+                }  
+                "self dmg push force increased"
+                {
+                    "attribute_class"   "mult_dmgself_push_force"
+                    "value"     "4.0"
+                }
+                "health from healers reduced"
+                {
+                    "attribute_class"   "mult_health_fromhealers"
+                    "value"     "0.2"
+                }
+                "fire rate penalty"
+                {
+                    "attribute_class"   "mult_postfiredelay"
+                    "value"     "5.0"
+                }
+                "clip size penalty"
+                {
+                    "attribute_class"       "mult_clipsize"
+                    "value"         "0.25"
+                }
+                "maxammo primary increased"
+                {
+                    "attribute_class"       "mult_maxammo_primary"
+                    "value"     "0.25"
+                }
+
+            }
+            "visuals"
+            {
+                "player_bodygroups"
+                {
+                    "hat"   "1"
+                }
+            }
+            "static_attrs"                                                                                           //Это сдвигает пушку в сторону при включении 'Уменьшеных моделей оружия' в настройках
+			{
+				"min_viewmodel_offset"					"10 0 -10"
+			}
+            "used_by_classes"                                                                                        //Какой класс может использовать данное оружие
+            {
+                "Soldier"		"1"
+            }
+            "item_quality"    "unique"                                                                               //Цвет названия оружия
+            "item_slot"	      "primary"                                                                              //В каком слоту находится оружие. Некоторые 'item_class' которые находятся в одном слоту не могут находится в другом, так например вы не сможете засунуть милишку в первый слот и наоборот.
+        }
+        "10011"
+        {
+            "name"                      "safer"                                                                        //Название пушки в файлах, можно писать всё что угодно - главное чтобы оно не повторялось с чем либо
+            "show_in_armory"            "1"                                                                          //Будет ли показываться ваша пушка в лодауте
+            "item_class"	            "tf_wearable"                                                       //То, на чём строится ваша пушка - в данном случае на обрезе разведчика. Все items_class'ы вы можете найти в 'tf_items_game'
+            "item_logname"              "Сайфер"                                                           //Иконка которая будет рисоваться в киллфиде при убийстве, большинство иконок можно найти в 'tf_items_game'
+            "item_name"                 "Сайфер"                                                    //Название вашей пушки в самой игре
+            "item_type_name"            "Вообще это safer, но кому не плевать"                                                                      //То что будет писаться под названием пушки
+            "item_description"          "Пассивное"                                     //Описание пушки, которое будет отображаться в самом низу. 
+            "image_inventory"		    "backpack/player/items/heavy/pocket_medic"                                     //Иконка, которая рисуется в лодауте персонажа. Все стандартные иконки можно найти в 'tf_items_game'
+            "model_player"		        "models/player/items/soldier/fwk_soldier_pocketmedic.mdl"                                   //Моделька оружия, которая будет отображаться от первого лица. Все стандартные модельки можно найти в 'tf_items_game'                                                                                     //Аттрибуты, а именно то что отличает вашу пушку от стока. Список всех аттрибутов и что они делают можно найти в TF2Classified_Attributes_Listing.txt
+            "act_as_wearable" "1"
+            "anim_slot" "FORCE_NOT_USED"
+            "attach_to_hands" "2"
+            "attributes"
+            {   
+                "cancel falling damage"
+                {
+                    "attribute_class"       "cancel_falling_damage"
+                    "value"     "1"
+                }
+                "maxammo primary increased"
+                {
+                    "attribute_class"       "mult_maxammo_primary"
+                    "value"     "1.5"
+                }
+            }
+            "static_attrs"
+            {
+                "class select override slot"			"2"	
+            }
+            "used_by_classes"                                                                                        //Какой класс может использовать данное оружие
+            {
+                "Soldier"		"1"
             }
             "item_quality"    "unique"                                                                               //Цвет названия оружия
             "item_slot"	      "secondary"                                                                              //В каком слоту находится оружие. Некоторые 'item_class' которые находятся в одном слоту не могут находится в другом, так например вы не сможете засунуть милишку в первый слот и наоборот.

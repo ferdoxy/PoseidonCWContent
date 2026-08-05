@@ -1,0 +1,6 @@
+"UnlitGeneric"
+{
+	"$baseTexture" "backpack/poseidon/missinggun/missingtex_large.vtf"
+	"$translucent" 1
+	"$vertexcolor" 1
+}
