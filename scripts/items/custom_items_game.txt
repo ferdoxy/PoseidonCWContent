@@ -400,12 +400,12 @@
 
                 "fire rate penalty"
                 {
-                    "attribute_class"       "fire rate penalty"
+                    "attribute_class"       "mult_postfiredelay"
                     "value"     "2.0"
                 }
                 "move speed penalty"
                 {
-                    "attribute_class"   "move speed penalty"
+                    "attribute_class"   "mult_player_movespeed"
                     "value"     "0.35"
                 }
 
@@ -417,7 +417,7 @@
                 "hidden separator"  "1"
                 "increased jump height"
                 {
-                    "attribute_class"   "increased jump height"
+                    "attribute_class"   "mod_jump_height"
                     "value" "0.1"
                 }
 
@@ -975,7 +975,6 @@
                     "attribute_class"       "add_onswing_addcond"
                     "value"         "41 30.0"
                 }
-                "onlymeleefor30seconds"     "1"
                 "model_by_ek"       "1"
                 "hidden separator"      "1"
             }
@@ -998,12 +997,10 @@
             "item_logname"              "Инжибафф"                                                           //Иконка которая будет рисоваться в киллфиде при убийстве, большинство иконок можно найти в 'tf_items_game'
             "item_name"                 "Инжибафф"                                                    //Название вашей пушки в самой игре
             "item_type_name"            ""                                                                      //То что будет писаться под названием пушки
-            "item_description"          "Однажды, Скаут решил найти ключ к вечной жизни.\nНайдя Эксалибур, он подумал, что он ему поможет.\nПопытавшись достать его у него этого сделать не вышло.\nДемоман взорвал камень к хуям и повредил Экскалибур.\nТеперь Скаут проклят и вынужден быть самым хилым, но раздавать всем пиздюлей."                                     //Описание пушки, которое будет отображаться в самом низу. 
+            "item_description"          "Tick tock, heavy like a brinks truck.."                                     //Описание пушки, которое будет отображаться в самом низу. 
             "image_inventory"		    "backpack/weapons/w_models/w_wrench"                                     //Иконка, которая рисуется в лодауте персонажа. Все стандартные иконки можно найти в 'tf_items_game'
             "model_player"		        "models/weapons/v_models/v_wrench_engineer.mdl"                                   //Моделька оружия, которая будет отображаться от первого лица. Все стандартные модельки можно найти в 'tf_items_game'
             "model_world"	            "models/weapons/w_models/w_wrench.mdl"                                   //Моделька, которая будет отображаться от третьего лица. Обычно можно ставить тоже самое что и в 'model_player'
-            "mouse_pressed_sound"	"ui/item_metal_weapon_pickup.wav"
-			"drop_sound"			"ui/item_metal_weapon_drop.wav"
             "attach_to_hands"           "1"                                                                          //Определяет то как персонаж должен держать модельку. Если будет неправильное значение, то пушка будет неправильно отображаться. Если вы взяли модельку из 'tf_items_game', то там же можно найти её правильный 'attach_to_hands'
             "anim_slot"                 "melee"                                                                    //Почти тоже самое что и 'attach_to_hands', только в большинстве влияет на то как персонаж будет держать оружие от третьего лица.
             "extra_wearable"            ""   //Косметика которая будет одеваться при экипировки пушки. Опять же большинство косметики можно найти в 'tf_items_game'
@@ -1036,7 +1033,7 @@
 			}
             "used_by_classes"                                                                                        //Какой класс может использовать данное оружие
             {
-                "scout"		"1"
+                "engineer"		"1"
             }
             "item_quality"    "unique"                                                                               //Цвет названия оружия
             "item_slot"	      "melee"                                                                              //В каком слоту находится оружие. Некоторые 'item_class' которые находятся в одном слоту не могут находится в другом, так например вы не сможете засунуть милишку в первый слот и наоборот.
